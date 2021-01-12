@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 76923494}
   - component: {fileID: 76923493}
   - component: {fileID: 76923492}
-  - component: {fileID: 76923491}
   m_Layer: 0
   m_Name: moenai
   m_TagString: Untagged
@@ -141,18 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &76923491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76923490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b2cc53117c84725b5a8b5b8fe0f7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &76923492
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -508,7 +495,6 @@ GameObject:
   - component: {fileID: 1773926027}
   - component: {fileID: 1773926026}
   - component: {fileID: 1773926025}
-  - component: {fileID: 1773926029}
   m_Layer: 0
   m_Name: moeru
   m_TagString: Untagged
@@ -590,18 +576,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &1773926029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773926024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b2cc53117c84725b5a8b5b8fe0f7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2074979789
 GameObject:
   m_ObjectHideFlags: 0
