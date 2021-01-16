@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public GameObject moeruTrash;
+    public GameObject moenaiTrash;
+    public GameObject canTrash;
+    public GameObject bottleTrash;
+    public GameObject parentTrashNotes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,26 +23,69 @@ public class GameManagerScript : MonoBehaviour
 
         //Splitで一行ずつを代入した1次配列を作成
         string[] tempLines = TextLines.Split('\n');
-        //List<int> chartLines = new List<int>();
+
+        //譜面データとなる二次元配列を生成
         var chartLines = new List<List<int>>();
-        chartLines.Add(new List<int>());
+
+        //
         for (int i = 0; i < tempLines.Length; i++)
         {
-            string[] tempLine1 = tempLines[i].Split(',');
-            tempLine1[1].Trim();
+            string[] tempLine1 = tempLines[i].Split(','); //「,」の前後で文字列を配列に分ける
+            tempLine1[1].Trim(); //「,」の後の空白文字を取り除く
 
-            var tempLine2 = new List<int>();
-            tempLine2.Add(int.Parse(tempLine1[0]));
-            tempLine2.Add(int.Parse(tempLine1[1]));
+            var tempLine2 = new List<int>(); //2列目のリストを生成
+            tempLine2.Add(int.Parse(tempLine1[0])); //タイミング
+            tempLine2.Add(int.Parse(tempLine1[1])); //種類
             chartLines.Add(tempLine2);
         }
 
-        print(chartLines[1][0]);
+        //ゴミノーツを配置
+        for(int i = 0; i < chartLines.Count; i++)
+        {
+            GameObject trashObject;
+            switch(chartLines[i][1])
+            {
+                case 1:
+                    trashObject = Instantiate(moeruTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    break;
+                case 2:
+                    trashObject = Instantiate(moenaiTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(180, Random.Range(0, 360), 0));
+                    break;
+                case 3:
+                    trashObject = Instantiate(canTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    break;
+                default:
+                    trashObject = Instantiate(bottleTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    break;
+            }
+
+            trashObject.transform.parent = parentTrashNotes.transform;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private float RandomX()
+    {
+        float random = Random.Range(-6.0f, 6.0f);
+        if (-6.0f <= random && random < -2.0f)
+            return -6.0f;
+        else if (-2.0f <= random && random < 2.0f)
+            return 0;
+        else
+            return 6.0f;
+    }
+
+    private float RandomY()
+    {
+        float random = Random.Range(-1.0f, 1.0f);
+        if (random > 0)
+            return 8.0f;
+        else
+            return 0;
     }
 }
