@@ -46,16 +46,16 @@ public class GameManagerScript : MonoBehaviour
             switch(chartLines[i][1])
             {
                 case 1:
-                    trashObject = Instantiate(moeruTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(moeruTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
                     break;
                 case 2:
-                    trashObject = Instantiate(moenaiTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(180, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(moenaiTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(180, Random.Range(0, 360), 0));
                     break;
                 case 3:
-                    trashObject = Instantiate(canTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(canTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
                     break;
                 default:
-                    trashObject = Instantiate(bottleTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/100), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(bottleTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
                     break;
             }
 
