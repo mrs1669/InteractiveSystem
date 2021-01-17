@@ -5,8 +5,8 @@ using UnityEngine;
 public class SackBehaviourScript : MonoBehaviour
 {
     public GameObject particle;
+    public GameObject incrementText;
     ComboTextScript comboTextScript;
-
     GameManagerScript gameManagerScript;
 
     List<string> caughtTrash;
@@ -44,15 +44,17 @@ public class SackBehaviourScript : MonoBehaviour
     private void OnDestroy() 
     {
         bool isCorrect = true;
+        string kindOfTrash = "";
 
         /******** 燃えないゴミにドラッグされた場合 ********/
         if (this.gameObject.transform.position.x <= -7.0f && this.gameObject.transform.position.y <= 6.0f)
         {
-            foreach(string trash in caughtTrash)
+            foreach (string trash in caughtTrash)
             {
                 if (trash != "Moenai(Clone)") // 燃えないゴミ以外のゴミが入っていた場合誤りとする
                     isCorrect = false;
             }
+            kindOfTrash = "Moenai";
         }
 
         /******** 缶ゴミにドラッグされた場合 ********/
@@ -63,6 +65,7 @@ public class SackBehaviourScript : MonoBehaviour
                 if (trash != "Can(Clone)")
                     isCorrect = false;
             }
+            kindOfTrash = "Can";
         }
 
         /******** 燃えるゴミにドラッグされた場合 ********/
@@ -73,6 +76,7 @@ public class SackBehaviourScript : MonoBehaviour
                 if (trash != "Moeru(Clone)")
                     isCorrect = false;
             }
+            kindOfTrash = "Moeru";
         }
 
         /******** ペットボトルゴミにドラッグされた場合 ********/
@@ -83,20 +87,30 @@ public class SackBehaviourScript : MonoBehaviour
                 if (trash != "Bottle(Clone)") // ペットボトルゴミ以外のゴミが入っていた場合誤りとする
                     isCorrect = false;
             }
+            kindOfTrash = "Bottle";
         }
 
         /******** ゴミ箱にドラッグされなかった場合はミス ********/
         else
+        {
             isCorrect = false;
+            kindOfTrash = "";
+        }
 
         if (isCorrect)
         {
-            gameManagerScript.SetScore(100 * caughtTrash.Count); // 正しければ、100*キャッチしたゴミの個数　をスコアに加算する
+            gameManagerScript.SetScore(100 + (caughtTrash.Count - 1) * 150); // 正しければスコアに加算する
+            var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
+            it.kindOfTrash = kindOfTrash;
+            it.scoreDelta = 100 + (caughtTrash.Count - 1) * 150;
         }
         else
         {
             gameManagerScript.SetScore(-25 * caughtTrash.Count); // 誤っていればスコアを　-25*キャッチしたゴミの個数　する
             comboTextScript.ResetCombo();
+            var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
+            it.kindOfTrash = kindOfTrash;
+            it.scoreDelta = -25 * caughtTrash.Count;
         }
     }
 }

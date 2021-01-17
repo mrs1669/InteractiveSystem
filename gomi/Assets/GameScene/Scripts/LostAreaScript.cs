@@ -5,6 +5,7 @@ using UnityEngine;
 public class LostAreaScript : MonoBehaviour
 {
     public GameObject comboText;
+    public GameObject incrementText;
 
     GameManagerScript gameManager;
 
@@ -27,6 +28,10 @@ public class LostAreaScript : MonoBehaviour
             gameManager.SetScore(-50);
             comboText.GetComponent<ComboTextScript>().ResetCombo();
             Destroy(other.gameObject);
+
+            var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
+            it.kindOfTrash = "";
+            it.scoreDelta = -50;
         }
     }
 }

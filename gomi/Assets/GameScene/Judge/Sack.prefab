@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25, z: 0.18}
-  m_Center: {x: 0, y: 0.1, z: -0.09}
+  m_Size: {x: 0.25, y: 0.28358588, z: 0.18000002}
+  m_Center: {x: 0, y: 0.08320707, z: -0.09000001}
 --- !u!114 &-5091466684480656447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 2119237678631982699, guid: 25c837edf738a0846b096763b3b65773,
+    type: 3}
+  incrementText: {fileID: 8806040584586196446, guid: 0c0458e594e025f4f987d523b99e6557,
     type: 3}
 --- !u!54 &6099210234636654922
 Rigidbody:
