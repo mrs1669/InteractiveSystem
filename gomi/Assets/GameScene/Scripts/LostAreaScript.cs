@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LostAreaScript : MonoBehaviour
 {
+    public GameObject comboText;
+
     GameManagerScript gameManager;
 
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class LostAreaScript : MonoBehaviour
         if(other.gameObject.tag == "Notes")
         {
             gameManager.SetScore(-50);
+            comboText.GetComponent<ComboTextScript>().ResetCombo();
             Destroy(other.gameObject);
         }
     }

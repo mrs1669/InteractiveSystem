@@ -14,7 +14,8 @@ public class GameManagerScript : MonoBehaviour
     // ゲーム中のスコア：ゲッターやセッターでのみ変更可能
     int totalScore = 0;
 
-
+    // ゲーム中のコンボ：ゲッターやセッターでのみ変更可能
+    int combo = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +73,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("GameManagerScript; Score: " + GetScore());
+       // Debug.Log("GameManagerScript; Score: " + GetScore());
     }
 
     private float RandomX()
@@ -100,4 +101,13 @@ public class GameManagerScript : MonoBehaviour
 
     // スコアのセッター
     public void SetScore(int score) => totalScore += score;
+
+    // コンボのゲッター
+    public int GetCombo() => combo;
+
+    // コンボのセッター
+    public void SetCombo() => combo++;
+
+    // コンボのリセット
+    public void ResetCombo() => combo = 0;
 }
