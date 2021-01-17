@@ -39,7 +39,7 @@ public class SackBehaviourScript : MonoBehaviour
         bool isCorrect = true;
 
         /******** 燃えないゴミにドラッグされた場合 ********/
-        if (this.gameObject.transform.position.x <= -9.0f && this.gameObject.transform.position.y <= 6.0f)
+        if (this.gameObject.transform.position.x <= -7.0f && this.gameObject.transform.position.y <= 6.0f)
         {
             foreach(string trash in catchedTrash)
             {
@@ -51,7 +51,7 @@ public class SackBehaviourScript : MonoBehaviour
         }
 
         /******** 缶ゴミにドラッグされた場合 ********/
-        else if (this.gameObject.transform.position.x <= -7.0f && this.gameObject.transform.position.y > 6.0f)
+        else if (this.gameObject.transform.position.x <= -6.0f && this.gameObject.transform.position.y > 6.0f)
         {
             foreach (string trash in catchedTrash)
             {
@@ -63,7 +63,7 @@ public class SackBehaviourScript : MonoBehaviour
         }
 
         /******** 燃えるゴミにドラッグされた場合 ********/
-        if (this.gameObject.transform.position.x >= 9.0f && this.gameObject.transform.position.y <= 6.0f)
+        else if (this.gameObject.transform.position.x >= 7.0f && this.gameObject.transform.position.y <= 6.0f)
         {
             foreach (string trash in catchedTrash)
             {
@@ -73,7 +73,7 @@ public class SackBehaviourScript : MonoBehaviour
         }
 
         /******** ペットボトルゴミにドラッグされた場合 ********/
-        else if (this.gameObject.transform.position.x >= 7.0f && this.gameObject.transform.position.y > 6.0f)
+        else if (this.gameObject.transform.position.x >= 6.0f && this.gameObject.transform.position.y > 6.0f)
         {
             foreach (string trash in catchedTrash)
             {
