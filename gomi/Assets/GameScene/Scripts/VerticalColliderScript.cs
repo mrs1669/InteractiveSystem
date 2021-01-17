@@ -42,5 +42,9 @@ public class VerticalColliderScript : MonoBehaviour
             Destroy(cube1);
             prefabIsInstantiated1 = false;
         }
+
+
+        /******* タッチポジションの可視化 **********/
+        //Debug.Log("VerticalColliderScript; Touch Position x:"+ hit.point.x + "  y:" + hit.point.y);
     }
 }

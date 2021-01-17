@@ -1006,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94230287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1990532322}
@@ -10264,7 +10264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3a2dc8e65d0f14ea05319823a599dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tappedCubePrefab: {fileID: 4978543703114471036, guid: 8f7091291454bc942b9c6a691a84da72,
+  tappedCubePrefab: {fileID: 8681529381199276634, guid: 0455be305e5c7bc45af74ef03b16dcfa,
     type: 3}
   mainCamera: {fileID: 963194227}
 --- !u!1001 &1471366107

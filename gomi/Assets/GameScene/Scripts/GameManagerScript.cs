@@ -10,6 +10,12 @@ public class GameManagerScript : MonoBehaviour
     public GameObject bottleTrash;
     public GameObject parentTrashNotes;
 
+
+    // ゲーム中のスコア：ゲッターやセッターでのみ変更可能
+    int totalScore = 0;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +72,7 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log("GameManagerScript; Score: " + GetScore());
     }
 
     private float RandomX()
@@ -88,4 +94,10 @@ public class GameManagerScript : MonoBehaviour
         else
             return 0;
     }
+
+    // スコアのゲッター
+    public int GetScore() => totalScore;
+
+    // スコアのセッター
+    public void SetScore(int score) => totalScore += score;
 }
