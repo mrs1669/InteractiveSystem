@@ -79,6 +79,7 @@ public class GameManagerScript : MonoBehaviour
             trashObject.transform.parent = parentTrashNotes.transform;
             parentTrashNotes.GetComponent<NotesMovementScript>().SetSpeed(setSpeed);
         }
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
