@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioSourceScript : MonoBehaviour
 {
@@ -17,7 +18,12 @@ public class AudioSourceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!audioSource.isPlaying)
+        {
+            Debug.Log("BGM end.");
+            SceneManager.LoadScene("ResultScene");
+
+        }
     }
 
     public void Play()
