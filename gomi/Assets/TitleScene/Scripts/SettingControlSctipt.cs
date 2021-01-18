@@ -10,7 +10,7 @@ public class SettingControlSctipt : MonoBehaviour
     GameObject go;
 
     public static float speed = 2.0f;
-    public float saveSpeed;
+    public float saveSpeed = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class SettingControlSctipt : MonoBehaviour
     //戻るボタンが押された時のやつ
     public void goBack() {
         //GamemanagerScript.cs内のsetSpeedに、保存した譜面速度を代入
-         //gm.setSpeed = saveSpeed;
+        speed = saveSpeed;
         SceneManager.LoadScene("titleScene");
     }
 
