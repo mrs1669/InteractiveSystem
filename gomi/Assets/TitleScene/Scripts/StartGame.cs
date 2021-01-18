@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour
     }
 
     public void goSetting() {
-        
+        SceneManager.LoadScene("SettingScene");
     }
 
 }
