@@ -11,7 +11,7 @@ public class GameManagerScript : MonoBehaviour
     public GameObject lightEventTrigger;
     public GameObject parentTrashNotes;
 
-    public float setSpeed; //タイトル画面から渡される譜面速度
+    public float setSpeed = 2.0f; //タイトル画面から渡される譜面速度
 
 
     // ゲーム中のスコア：ゲッターやセッターでのみ変更可能
