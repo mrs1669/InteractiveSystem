@@ -11,6 +11,8 @@ public class LightEventTriggerScript : MonoBehaviour
 
     public GameObject lines;
 
+    float time = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class LightEventTriggerScript : MonoBehaviour
         if (trigger == false) return;
 
         if(selfTime < 60) selfTime++;
-        directionalLight.transform.rotation = Quaternion.Euler(new Vector3(Mathf.Lerp(directionalLight.transform.rotation.x, -90, Time.time/100), 0));
+        directionalLight.transform.rotation = Quaternion.Euler(new Vector3(Mathf.Lerp(directionalLight.transform.rotation.x, -90, (Time.time - time)), 0));
 
         if (selfTime == 60)
         {
@@ -34,6 +36,7 @@ public class LightEventTriggerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(trigger == false) time = Time.time;
         if (other.gameObject.name == "VerticalCollider") trigger = true;
     }
 }

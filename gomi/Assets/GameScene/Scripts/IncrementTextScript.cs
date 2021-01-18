@@ -66,7 +66,7 @@ public class IncrementTextScript : MonoBehaviour
 
         textMeshPro.text = plusOrMinus + scoreDelta.ToString();
 
-        Destroy(this.gameObject, 3.0f);
+        Destroy(this.gameObject, 2.5f);
     }
 
     // Update is called once per frame
