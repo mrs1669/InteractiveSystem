@@ -19,7 +19,7 @@ public class ScoreTextScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         if (score != gameManagerScript.GetScore())
         {
@@ -29,5 +29,6 @@ public class ScoreTextScript : MonoBehaviour
         else
             lerpTime = 0;
         textMeshPro.text = score.ToString();
+        gameManagerScript.SetScore(score);
     }
 }
