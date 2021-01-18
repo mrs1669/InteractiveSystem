@@ -6,6 +6,9 @@ public class SackBehaviourScript : MonoBehaviour
 {
     public GameObject particle;
     public GameObject incrementText;
+    AudioSource pickUpSE;
+    AudioSource throwSE;
+    AudioSource wrongSE;
     ComboTextScript comboTextScript;
     GameManagerScript gameManagerScript;
 
@@ -17,6 +20,9 @@ public class SackBehaviourScript : MonoBehaviour
         caughtTrash = new List<string>();
         gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManagerScript>();
         comboTextScript = GameObject.Find("ComboText").GetComponent<ComboTextScript>();
+        pickUpSE = GameObject.Find("PickUp").GetComponent<AudioSource>();
+        throwSE = GameObject.Find("Throw").GetComponent<AudioSource>();
+        wrongSE = GameObject.Find("Wrong").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +41,7 @@ public class SackBehaviourScript : MonoBehaviour
             Destroy(Instantiate(particle, new Vector3(other.transform.position.x, other.transform.position.y), Quaternion.identity), 2.0f); // キャッチした時のパーティクルをキャッチした位置で生成して２秒後に消滅させる
             Destroy(other.gameObject); // キャッチしたゴミオブジェクトを消す
 
+            pickUpSE.PlayOneShot(pickUpSE.clip);
             comboTextScript.IncrementCombo();
         }
     }
@@ -106,6 +113,7 @@ public class SackBehaviourScript : MonoBehaviour
             var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
             it.kindOfTrash = kindOfTrash;
             it.scoreDelta = 100 + (caughtTrash.Count - 1) * 150;
+            throwSE.PlayOneShot(throwSE.clip);
         }
         else
         {
@@ -114,6 +122,9 @@ public class SackBehaviourScript : MonoBehaviour
             var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
             it.kindOfTrash = kindOfTrash;
             it.scoreDelta = -25 + (caughtTrash.Count - 1) * -50;
+            wrongSE.PlayOneShot(wrongSE.clip);
         }
+
+        
     }
 }
