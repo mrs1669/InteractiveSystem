@@ -420,7 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
   saveSpeed: 0
 --- !u!1 &208759544
 GameObject:
@@ -678,7 +677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
   saveSpeed: 0
 --- !u!1 &275602877
 GameObject:
@@ -1415,7 +1413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
   saveSpeed: 0
 --- !u!1 &1047154051
 GameObject:
@@ -1696,7 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a020db9effe443d5bee7cc39f493b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextSpeed: {fileID: 1872050347}
+  speedValueObject: {fileID: 1872050345}
 --- !u!1 &1375802162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +1993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
   saveSpeed: 0
 --- !u!1 &1560857292
 GameObject:
@@ -2613,7 +2609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 2.0
 --- !u!222 &1872050348
 CanvasRenderer:
   m_ObjectHideFlags: 0
