@@ -1023,8 +1023,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 19, y: 1, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 37.825356, y: 1, z: 15}
+  m_Center: {x: 0.18497849, y: 0, z: 0}
 --- !u!1001 &95084315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3514,7 +3514,10 @@ MonoBehaviour:
     type: 3}
   bottleTrash: {fileID: 3351051378542170503, guid: 5b6bb05b175059040b884f907052ea33,
     type: 3}
+  lightEventTrigger: {fileID: 6708082432908273585, guid: 41e6ce18e104bb54caa113b7d871f6e8,
+    type: 3}
   parentTrashNotes: {fileID: 1563672239}
+  setSpeed: 2
 --- !u!4 &390771808
 Transform:
   m_ObjectHideFlags: 0
@@ -10602,6 +10605,7 @@ GameObject:
   - component: {fileID: 1435327384}
   - component: {fileID: 1435327385}
   - component: {fileID: 1435327386}
+  - component: {fileID: 1435327387}
   m_Layer: 0
   m_Name: VerticalCollider
   m_TagString: Untagged
@@ -10631,7 +10635,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435327383}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 33.6, y: 30, z: 1}
@@ -10651,6 +10655,22 @@ MonoBehaviour:
   tappedCubePrefab: {fileID: 8681529381199276634, guid: 0455be305e5c7bc45af74ef03b16dcfa,
     type: 3}
   mainCamera: {fileID: 963194227}
+--- !u!54 &1435327387
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435327383}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1471366107
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -43,6 +43,9 @@ public class SackBehaviourScript : MonoBehaviour
     // 画面から指が離された時の処理：正しいゴミ箱の位置にドラッグされていれば得点、そうでなければミス
     private void OnDestroy() 
     {
+        if (caughtTrash.Count < 1) // ゴミを一つもキャッチしていなければスコア計算をしない
+            return;
+
         bool isCorrect = true;
         string kindOfTrash = "";
 
@@ -106,11 +109,11 @@ public class SackBehaviourScript : MonoBehaviour
         }
         else
         {
-            gameManagerScript.SetScore(-25 * caughtTrash.Count); // 誤っていればスコアを　-25*キャッチしたゴミの個数　する
+            gameManagerScript.SetScore(-25 + (caughtTrash.Count - 1) * -50); // 誤っていればスコアを　-25*キャッチしたゴミの個数　する
             comboTextScript.ResetCombo();
             var it = Instantiate(incrementText).GetComponent<IncrementTextScript>();
             it.kindOfTrash = kindOfTrash;
-            it.scoreDelta = -25 * caughtTrash.Count;
+            it.scoreDelta = -25 + (caughtTrash.Count - 1) * -50;
         }
     }
 }

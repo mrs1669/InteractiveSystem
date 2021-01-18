@@ -8,7 +8,10 @@ public class GameManagerScript : MonoBehaviour
     public GameObject moenaiTrash;
     public GameObject canTrash;
     public GameObject bottleTrash;
+    public GameObject lightEventTrigger;
     public GameObject parentTrashNotes;
+
+    public float setSpeed; //タイトル画面から渡される譜面速度
 
 
     // ゲーム中のスコア：ゲッターやセッターでのみ変更可能
@@ -34,7 +37,7 @@ public class GameManagerScript : MonoBehaviour
         //譜面データとなる二次元配列を生成
         var chartLines = new List<List<int>>();
 
-        //
+        // 
         for (int i = 0; i < tempLines.Length; i++)
         {
             string[] tempLine1 = tempLines[i].Split(','); //「,」の前後で文字列を配列に分ける
@@ -50,23 +53,31 @@ public class GameManagerScript : MonoBehaviour
         for(int i = 0; i < chartLines.Count; i++)
         {
             GameObject trashObject;
+
             switch(chartLines[i][1])
             {
                 case 1:
-                    trashObject = Instantiate(moeruTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(moeruTrash, new Vector3(RandomX(), RandomY(), (chartLines[i][0]/50) * setSpeed), Quaternion.Euler(90, Random.Range(0, 360), 0));
                     break;
                 case 2:
-                    trashObject = Instantiate(moenaiTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(180, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(moenaiTrash, new Vector3(RandomX(), RandomY(), (chartLines[i][0]/50) * setSpeed), Quaternion.Euler(180, Random.Range(0, 360), 0));
                     break;
                 case 3:
-                    trashObject = Instantiate(canTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = Instantiate(canTrash, new Vector3(RandomX(), RandomY(), (chartLines[i][0]/50) * setSpeed), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    break;
+                case 4:
+                    trashObject = Instantiate(bottleTrash, new Vector3(RandomX(), RandomY(), (chartLines[i][0]/50) * setSpeed), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    break;
+                case 5:
+                    trashObject = Instantiate(lightEventTrigger, new Vector3(0, 0, (chartLines[i][0]/50) * setSpeed), Quaternion.identity);
                     break;
                 default:
-                    trashObject = Instantiate(bottleTrash, new Vector3(RandomX(), RandomY(), chartLines[i][0]/50), Quaternion.Euler(90, Random.Range(0, 360), 0));
+                    trashObject = new GameObject(); // 空オブジェクト、ふつうはここにたどり着かない
                     break;
             }
 
             trashObject.transform.parent = parentTrashNotes.transform;
+            parentTrashNotes.GetComponent<NotesMovementScript>().SetSpeed(setSpeed);
         }
     }
 
