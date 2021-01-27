@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 287804470}
   - component: {fileID: 287804469}
   - component: {fileID: 287804468}
+  - component: {fileID: 287804471}
   m_Layer: 5
   m_Name: DownButton
   m_TagString: Untagged
@@ -842,7 +843,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287804469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 287804471}
+        m_MethodName: setNormal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &287804469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,6 +892,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287804466}
   m_CullTransparentMesh: 0
+--- !u!114 &287804471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287804466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveSpeed: 0
 --- !u!1 &437985992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258520857}
   - component: {fileID: 1258520858}
+  - component: {fileID: 1258520859}
   m_Layer: 0
   m_Name: GameMain
   m_TagString: Untagged
@@ -1694,6 +1720,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedValueObject: {fileID: 1872050345}
+--- !u!114 &1258520859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258520856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16c20958a0a46940b5dec41809e7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyValue: {fileID: 490249127}
 --- !u!1 &1375802162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2045,7 @@ GameObject:
   - component: {fileID: 1560857296}
   - component: {fileID: 1560857295}
   - component: {fileID: 1560857294}
+  - component: {fileID: 1560857297}
   m_Layer: 5
   m_Name: UpButton
   m_TagString: Untagged
@@ -2075,7 +2115,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1560857295}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1560857297}
+        m_MethodName: setDifficult
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1560857295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,6 +2164,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560857292}
   m_CullTransparentMesh: 0
+--- !u!114 &1560857297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560857292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e08cd30be1f5431ebf51e7d38689c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveSpeed: 0
 --- !u!1 &1706841788
 GameObject:
   m_ObjectHideFlags: 0

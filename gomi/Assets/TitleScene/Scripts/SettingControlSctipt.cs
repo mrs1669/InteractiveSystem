@@ -10,6 +10,7 @@ public class SettingControlSctipt : MonoBehaviour
     GameObject go;
 
     public static float speed = 2.0f;
+    public static int difficulty = 1;
     public float saveSpeed = 2.0f;
 
     // Start is called before the first frame update
@@ -30,12 +31,30 @@ public class SettingControlSctipt : MonoBehaviour
 
     //＋ボタンが押されたらSpeedをあげる
     public void upSpeed() {
-        speed += 0.1f;
+        speed += 0.2f;
     }
 
     //ーボタンが押されたらSpeedを下げる
     public void downSpeed() {
-        speed -= 0.1f;
+        if (speed <= 1.0f) return;
+        speed -= 0.2f;
+    }
+
+    //難易度の変更
+    public void setDifficult()
+    {
+        if (difficulty == 1)
+        {
+            difficulty = 2;
+        }
+    }
+
+    public void setNormal()
+    {
+        if (difficulty == 2)
+        {
+            difficulty = 1;
+        }
     }
 
     //戻るボタンが押された時のやつ

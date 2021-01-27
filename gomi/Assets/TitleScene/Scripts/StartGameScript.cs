@@ -28,5 +28,5 @@ public class StartGameScript : MonoBehaviour
     #elif UNITY_STANDALONE
       UnityEngine.Application.Quit();
     #endif
-  }
+    }
 }

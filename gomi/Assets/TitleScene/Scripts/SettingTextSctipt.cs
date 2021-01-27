@@ -6,19 +6,19 @@ using UnityEngine.UI;
 public class SettingTextSctipt : MonoBehaviour
 {
 
-    public GameObject speedValueObject = null; 
+    public GameObject speedValueObject;
     //private float speed;
+    private Text speedValue;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        speedValue = speedValueObject.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Text speedValue = speedValueObject.GetComponent<Text>();
         speedValue.text = SettingControlSctipt.speed.ToString("f1");
     }
 }

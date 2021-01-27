@@ -22,7 +22,17 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         TextAsset textasset = new TextAsset(); //テキストファイルのデータを取得するインスタンスを作成
-        textasset = Resources.Load("chart_astronomia", typeof(TextAsset)) as TextAsset; //Resourcesフォルダから対象テキストを取得
+
+        switch (SettingControlSctipt.difficulty)
+        {
+            case 1:
+                textasset = Resources.Load("chart_astronomia_normal", typeof(TextAsset)) as TextAsset; //Resourcesフォルダから対象テキストを取得
+                break;
+            case 2:
+                textasset = Resources.Load("chart_astronomia_difficult", typeof(TextAsset)) as TextAsset; //Resourcesフォルダから対象テキストを取得
+                break;
+        }
+
         string TextLines = textasset.text; //テキスト全体をstring型で入れる変数を用意して入れる
 
         //テキスト内の();を消す
@@ -39,7 +49,6 @@ public class GameManagerScript : MonoBehaviour
         for (int i = 0; i < tempLines.Length; i++)
         {
             string[] tempLine1 = tempLines[i].Split(','); //「,」の前後で文字列を配列に分ける
-            tempLine1[1].Trim(); //「,」の後の空白文字を取り除く
 
             var tempLine2 = new List<int>(); //2列目のリストを生成
             tempLine2.Add(int.Parse(tempLine1[0])); //タイミング
