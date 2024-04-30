@@ -22,3 +22,6 @@
 - 燃えないゴミ
 - ペットボトル
 - カン
+
+## プレイ動画
+https://drive.google.com/file/d/15Fl45TRAy4jLGPKvNkodRWPirpaa2PB1/view?usp=drivesdk
